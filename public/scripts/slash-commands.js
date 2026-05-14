@@ -351,6 +351,7 @@ export function initDefaultSlashCommands() {
                 } catch {
                     console.warn('Timeout waiting for generation unlock');
                     toastr.warning(t`Cannot run /impersonate command while the reply is being generated.`);
+                    outerResolve(Promise.resolve(''));
                     return '';
                 }
 
